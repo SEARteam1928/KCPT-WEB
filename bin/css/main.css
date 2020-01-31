@@ -1,0 +1,136 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif
+}
+.block-header{
+    color:#ffffff;
+    background: #181818;
+    height: 30px;
+    display: flex;
+}
+
+.block-header__add{
+    background-color: #1875d1;
+    position: absolute;
+    top:15px;
+    left:15px;
+    height: 24px;
+    width: 24px;
+    margin: 3px 3px 3px 0;
+    text-align: center;
+    line-height: 24px;
+}
+
+.block-header__edit{
+    background-color: #1875d1;
+    position: absolute;
+    top:3px;
+    right:3px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    line-height: 24px;
+
+}
+
+.content{
+    height: 24px;
+}
+
+.content-block{
+    /* background-color: #1875d1; */
+    right: 0;
+    width: 100%-24px;
+}
+.content-block-day,
+.wrap-days-items{
+    margin-left: 15px;
+}
+
+.content-block-day__tool,
+.days-items__tool{
+    background-color: #181818;
+    height: 24px ;
+    width: 24px;
+}
+
+.block-header__text{
+    position: absolute;
+    left: 50%;
+    top:6px;
+    transform: translate(-50%,0);
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+}
+
+.title__name-bd{
+    font-size: 24px;
+}
+
+ /* pop up */
+.pop-up__blur{
+    background: rgba(18, 18, 18, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.pop-up-content{
+    position: absolute;
+    height: 150px;
+    /* width: 250px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #28a4ff;
+}
+
+.wrap-selector{
+    display: flex;
+}
+
+.input-id__item{
+    border: 1px solid #000;
+}
+
+.item
+{
+    background-color: #28a4ff;
+    width: 23%;
+    margin: 0 5px;
+}
+.item__text
+{
+    text-align: center;
+    padding: 2px;
+    border-bottom: 3px solid rgb(154,205,50);
+
+}
+.item__add
+{
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.day-items{
+    display: flex;
+    
+}
+
+.items{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: solid 1px #000
+}
+
+.flex
+{
+    display: flex;
+    justify-content: center;
+}
