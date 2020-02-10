@@ -336,13 +336,13 @@ function createStructureTree(options) {
                     teacher.dataset["whoIs"] = "teacher";
                     room.dataset["whoIs"] = "room";
 
-                    numlesson.classList = "items";
-                    subgroup.classList = "items";
-                    lesson.classList = "items";
-                    teacher.classList = "items";
-                    room.classList = "items";
-                    remove.classList = "items";
-                    edit.classList = "items";
+                    numlesson.classList = "items lessonNum";
+                    subgroup.classList = "items subGroupNum";
+                    lesson.classList = "items lesson";
+                    teacher.classList = "items teacherName";
+                    room.classList = "items roomNum";
+                    remove.classList = "items removeLesson";
+                    edit.classList = "items editLesson";
                     
                     let continer = document.createElement("div");
                     continer.classList = "day-items";

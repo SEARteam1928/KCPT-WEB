@@ -138,43 +138,60 @@ body{
 
 .day-items{
     display: flex;
-    
+    width: 100%;
+	justify-content: space-around;
 }
 
 .items{
     padding-left: 5px;
+	margin-bottom: 5px;
     padding-right: 5px;
+	border-bottom: solid 1px #8aacc8
 }
 
 .lessonNum{
     padding-left: 5px;
-    padding-right: 56px;
-	    border-left: solid 1px #322
+	padding-bottom: 10px;
+	flex: 1;
+	background: #bbdefb;
+    padding-right: 5px;
+	border: solid 1px #8aacc8
+
 }
-.items subGroupNum{
+.subGroupNum{
     padding-left: 5px;
+	flex: 1;
     padding-right: 5px;
     border-left: solid 1px #000
 }
-.items lesson{
+.lesson{
     padding-left: 5px;
+    padding-right: 5px;
+	flex: 9;
+    border-left: solid 1px #000
+}
+
+.teacherName{
+    padding-left: 5px;
+    padding-right: 5px;
+	flex: 3;
+    border-left: solid 1px #000
+}
+
+.roomNum{
+    padding-left: 5px;
+	flex: 1;
     padding-right: 5px;
     border-left: solid 1px #000
 }
 
-.items teacherName{
-    padding-left: 5px;
-    padding-right: 5px;
-    border-left: solid 1px #000
+.removeLesson{
+	padding-right:20px;
 }
 
-.items roomNum{
-    padding-left: 5px;
-    padding-right: 5px;
-    border-left: solid 1px #000
+.editLesson{
+    padding-right:20px;
 }
-
-
 
 .flex
 {

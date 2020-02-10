@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- Начально будет выбрано второе значение -->
+<select id="groupSelect" onchange="getLessonOnGroup(this)" name="select"> <!--Supplement an id here instead of using 'name'-->
+</select>
+<select id="daySelect" onchange="getLessonOnDay(this)" name="select"> <!--Supplement an id here instead of using 'name'-->
+</select>
+	<script
+  		src="https://code.jquery.com/jquery-3.4.1.min.js"
+  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  		crossorigin="anonymous">
+	</script>
+
+	<script>
+        var group = localStorage.getItem("group");
+		if(group === null){
+		group = 1;
+		}
+		let date = new Date();
+        var day = date.getDay();
+		if(day === 0){
+		day = 1;
+		}
+		function getOptionsList() {
+		let groupList = [];
+		let dayList = [];
+ 		$.ajax({
+			url:"http://timetable.kcpt-1.ru/api/v3/allOptions",
+			type:"get",
+			dataType:"json",
+			data:{
+			},
+			success (data) {
+				console.log(data);
+				
+	            for(let i=0; i<data.groups.length; i++) {
+                    let option = document.createElement('option');
+                    option.append(data.groups[i].name);
+					option.setAttribute("value",data.groups[i].id);
+					option.dataset["id"] = data.groups[i].id;
+                    groupList.push(option);
+                }
+				
+	            for(let i=0; i<data.dayOfWeek.length; i++) {
+                    let option = document.createElement('option');
+                    option.append(data.dayOfWeek[i].name);
+					option.setAttribute("value",data.dayOfWeek[i].id);
+					option.dataset["id"] = data.dayOfWeek[i].id;
+                    dayList.push(option);
+                }
+				
+				groupSelect.append(...groupList);
+				daySelect.append(...dayList);
+			},
+			error (header, textError) {
+				console.log(header.status, header.statusText);
+				alert("ААА ПАНИКА ПАНИКАААААА");
+			}
+
+		});
+        }
+		
+		
+		
+		function updateTimetableList(){
+		        $.ajax({
+			url:"http://timetable.kcpt-1.ru/api/v3/timetable",
+			type:"get",
+			dataType:"json",
+			data:{
+				"group":group,
+				"day":day
+			},
+			success (data) {
+				console.log(data);
+				    let dive = document.createElement('div');
+                    dive.append("Расписание на "+data.timetable[0].day+": "+data.timetable[0].groupname+" "+data.timetable[0].subject+"\n\n\n\n\n\n");
+					document.body.append(dive);
+			},
+			error (header, textError) {
+				console.log(header.status, header.statusText);
+				alert("ААА ПАНИКА ПАНИКАААААА");
+			}
+
+		});	
+		}
+		
+		function updateTimetableListOnToday(){
+		        $.ajax({
+			url:"http://timetable.kcpt-1.ru/api/v3/timetable",
+			type:"get",
+			dataType:"json",
+			data:{
+				"group":group,
+				"day":day
+			},
+			success (data) {
+				console.log(data);
+				    let dive = document.createElement('div');
+                    dive.append("Расписание на сегодня: "+data.timetable[0].groupname+" "+data.timetable[0].day+" "+data.timetable[0].subject+"\n\n\n\n\n\n");
+					document.body.append(dive);
+			},
+			error (header, textError) {
+				console.log(header.status, header.statusText);
+				alert("ААА ПАНИКА ПАНИКАААААА");
+			}
+
+		});	
+		}
+		
+		function getLessonOnGroup(groupOpt){
+						    let dive = document.createElement('br');
+										localStorage.setItem("group",groupOpt.value);
+
+					document.body.append(dive);
+		group = groupOpt.value;
+		updateTimetableList();
+		}		
+		function getLessonOnDay(dayOpt){
+								    let dive = document.createElement('br');
+					document.body.append(dive);
+		day = dayOpt.value;
+		updateTimetableList();
+		}
+
+
+		getOptionsList();
+		updateTimetableListOnToday();
+
+		
+
+	</script>
+</body>
+</html>
