@@ -5,10 +5,11 @@
     <title>Document</title>
 </head>
 <body>
-<select id="groupSelect" onchange="getLessonOnGroup(this)" name="select">
+<select id="groupSelect" onchange="selectGroup(this)" name="select">
 </select>
-<select id="daySelect" onchange="getLessonOnDay(this)" name="select">
+<select id="daySelect" onchange="selectDay(this)" name="select">
 </select>
+
 <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -27,12 +28,7 @@
     }
 
     function getOptionsList() {
-/*
-        let groupList = [];
-*/
-/*
-        let dayList = [];
-*/
+
         $.ajax({
             url: "http://timetable.kcpt-1.ru/api/v3/allOptions",
             type: "get",
@@ -41,33 +37,8 @@
             success(data) {
                 console.log(data);
 
-            /*    for (let i = 0; i < data.groups.length; i++) {
-                    let option = document.createElement('option');
-                    option.append(data.groups[i].name);
-                    option.setAttribute("value", data.groups[i].id);
-                    option.dataset["id"] = data.groups[i].id;
-                    groupList.push(option);
-                }
-*/
-            appendInView(data.groups,'option',groupSelect);
-            appendInView(data.dayOfWeek,'option',daySelect);
-
-/*
-                for (let i = 0; i < data.dayOfWeek.length; i++) {
-                    let option = document.createElement('option');
-                    option.append(data.dayOfWeek[i].name);
-                    option.setAttribute("value", data.dayOfWeek[i].id);
-                    option.dataset["id"] = data.dayOfWeek[i].id;
-                    dayList.push(option);
-                }
-*/
-
-/*
-                groupSelect.append(...groupList);
-*/
-/*
-                daySelect.append(...dayList);
-*/
+                appendInView(data.groups, 'option', groupSelect);
+                appendInView(data.dayOfWeek, 'option', daySelect);
             },
             error(header, textError) {
                 console.log(header.status, header.statusText);
@@ -81,12 +52,12 @@
         let list = [];
         for (let i = 0; i < arr.length; i++) {
             let element = document.createElement(createdElement);
-			element.append(arr[i].name);
-			element.setAttribute("value", arr[i].id);
-			element.dataset["id"] = arr[i].id;
-			list.push(element);
+            element.append(arr[i].name);
+            element.setAttribute("value", arr[i].id);
+            element.dataset["id"] = arr[i].id;
+            list.push(element);
         }
-		appendIn.append(...list);
+        appendIn.append(...list);
     }
 
     function updateTimetableList(timetableOn) {
@@ -101,7 +72,21 @@
             success(data) {
                 console.log(data);
                 let dive = document.createElement('div');
-                dive.append(timetableOn + data.timetable[0].day + ": " + data.timetable[0].groupname + " " + data.timetable[0].subject + "\n\n\n\n\n\n");
+                dive.setAttribute("class","allTable");
+                dive.innerHTML  = "<div class='tableLine'><div>"
+                    + data.timetable[0].day
+                    + "</div> <div>"
+                    + data.timetable[0].groupname
+                    + "</div> <div>"
+                    + data.timetable[0].hour
+                    + "</div> <div>"
+                    + data.timetable[0].subgroup
+                    +"</div> <div>"
+                    + data.timetable[0].subject
+                    +" </div> <div>"
+                    + data.timetable[0].teacher
+                    +"</div> </div>";
+
                 document.body.append(dive);
             },
             error(header, textError) {
@@ -112,25 +97,20 @@
         });
     }
 
-    function getLessonOnGroup(groupOpt) {
-        let dive = document.createElement('br');
-        localStorage.setItem("group", groupOpt.value);
-
-        document.body.append(dive);
-        group = groupOpt.value;
+    function selectGroup(opt) {
+        localStorage.setItem("group", opt.value);
+        group = opt.value;
         updateTimetableList("Расписание на ");
     }
 
-    function getLessonOnDay(dayOpt) {
-        let dive = document.createElement('br');
-        document.body.append(dive);
-        day = dayOpt.value;
+    function selectDay(opt) {
+        day = opt.value;
         updateTimetableList("Расписание на ");
     }
 
 
     getOptionsList();
-	updateTimetableList("Расписание на сегодня: " );
+    updateTimetableList("Расписание на сегодня: ");
 
 </script>
 </body>
