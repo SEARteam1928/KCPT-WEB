@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="test.css">
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
@@ -9,109 +10,12 @@
 </select>
 <select id="daySelect" onchange="selectDay(this)" name="select">
 </select>
-
+<div class="allTable" id="allTable"></div>
 <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
 </script>
-
-<script>
-    var group = localStorage.getItem("group");
-    if (group === null) {
-        group = 1;
-    }
-    let date = new Date();
-    var day = date.getDay();
-    if (day === 0) {
-        day = 1;
-    }
-
-    function getOptionsList() {
-
-        $.ajax({
-            url: "http://timetable.kcpt-1.ru/api/v3/allOptions",
-            type: "get",
-            dataType: "json",
-            data: {},
-            success(data) {
-                console.log(data);
-
-                appendInView(data.groups, 'option', groupSelect);
-                appendInView(data.dayOfWeek, 'option', daySelect);
-            },
-            error(header, textError) {
-                console.log(header.status, header.statusText);
-                alert("ААА ПАНИКА ПАНИКАААААА");
-            }
-
-        });
-    }
-
-    function appendInView(arr, createdElement, appendIn) {
-        let list = [];
-        for (let i = 0; i < arr.length; i++) {
-            let element = document.createElement(createdElement);
-            element.append(arr[i].name);
-            element.setAttribute("value", arr[i].id);
-            element.dataset["id"] = arr[i].id;
-            list.push(element);
-        }
-        appendIn.append(...list);
-    }
-
-    function updateTimetableList(timetableOn) {
-        $.ajax({
-            url: "http://timetable.kcpt-1.ru/api/v3/timetable",
-            type: "get",
-            dataType: "json",
-            data: {
-                "group": group,
-                "day": day
-            },
-            success(data) {
-                console.log(data);
-                let dive = document.createElement('div');
-                dive.setAttribute("class","allTable");
-                dive.innerHTML  = "<div class='tableLine'><div>"
-                    + data.timetable[0].day
-                    + "</div> <div>"
-                    + data.timetable[0].groupname
-                    + "</div> <div>"
-                    + data.timetable[0].hour
-                    + "</div> <div>"
-                    + data.timetable[0].subgroup
-                    +"</div> <div>"
-                    + data.timetable[0].subject
-                    +" </div> <div>"
-                    + data.timetable[0].teacher
-                    +"</div> </div>";
-
-                document.body.append(dive);
-            },
-            error(header, textError) {
-                console.log(header.status, header.statusText);
-                alert("ААА ПАНИКА ПАНИКАААААА");
-            }
-
-        });
-    }
-
-    function selectGroup(opt) {
-        localStorage.setItem("group", opt.value);
-        group = opt.value;
-        updateTimetableList("Расписание на ");
-    }
-
-    function selectDay(opt) {
-        day = opt.value;
-        updateTimetableList("Расписание на ");
-    }
-
-
-    getOptionsList();
-    updateTimetableList("Расписание на сегодня: ");
-
-</script>
+<script src="test.js"></script>
 </body>
 </html>
