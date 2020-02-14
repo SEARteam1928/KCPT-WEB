@@ -6,12 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-<select id="groupSelect" onchange="selectGroup(this)" name="select">
-</select>
-<select id="daySelect" onchange="selectDay(this)" name="select">
-</select>
+<div class="block-header">
+
+    <img src="shape_left.png" alt="logo" class="block-header__text_img">
+</div>
+
+<div class="title">
+    <img src="tcp_logo.png" alt="logo" class="logoAdmin">
+</div>
+<a class="changes"
+   href="https://docs.google.com/document/d/e/2PACX-1vS2ehAErYyAWY-cm247Pt4oT2YVAkEMwiYXhFu0pxGexUne1PTWNiWS0ktvlglRQqNpLtolGzJjIlvc/pub">
+    Изменения
+</a>
+<div>
+    <select class="groupSelect" id="groupSelect" onchange="selectGroup(this)" name="select">
+    </select>
+    <select class="daySelect" id="daySelect" onchange="selectDay(this)" name="select">
+    </select>
+</div>
 <div class="userInfo" id="userInfo"></div>
 <div class="allTable" id="allTable"></div>
+
 <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

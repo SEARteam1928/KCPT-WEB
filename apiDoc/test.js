@@ -8,8 +8,13 @@ if (day === 0) {
     day = 1;
 }
 /*
-" 8:15 - 9:00\n 2| 9:00 - 9:45\n\nперемена 15 минут\n\n 3| 10:00 - 10:45\n 4| 10:45 - 11:30\n\nперемена 30 минут\n\n 5| 12:00 - 12:45\n 6| 12:45 - 13:30\n\nперемена 30 минут\n\n 7| 14:00 - 14:45\n 8| 14:45 - 15:30\n\nперемена 15 минут\n\n 9| 15:45 - 16:30\n10| 16:30 - 17:15\n\nперемена 10 минут\n\n11| 17:25 - 18:10\n12| 18:10 - 18:55\n\n"
-"Cуббота\n\n\n 1| 8:15 - 9:00\n 2| 9:00 - 9:45\n\nперемена 5 минут\n\n3| 9:50 - 10:35\n 4| 10:35 - 11:20\n\nперемена 30 минут\n\n 5| 11:50 - 12:35\n 6| 12:35 - 13:20\n\nперемена 10 минут\n\n 7| 13:30 - 14:15\n 8| 14:15 - 15:00\n\nперемена 10 минут\n\n 9| 15:10 - 15:55\n10| 15:55 - 16:40\n\nперемена 5 минут\n\n11| 16:45 - 17:30\n12| 17:30 - 18:15\n\n"
+"  2| \nперемена 15 минут\n\n 3|  4| \nперемена 30 минут\n\n 5| 6|
+\n\nперемена 30 минут\n\n 7|  8| \nперемена 15 минут\n\n 9| 10|
+\n\nперемена 10 минут\n\n11| 17:25 - 18:10\n12| 18:10 - 18:55\n\n"
+
+"Cуббота\n\n\n 1|2| \n\nперемена 5 минут\n\n3|4| \n\nперемена 30 минут\n\n
+5| 6| \n\nперемена 10 минут\n\n 7|  8| \n\nперемена 10 минут\n\n
+9| 10| \nперемена 5 минут\n\n11| \n12|\n\n"
 */
 
 const timeLessonMnFr = ["","8:15 - 9:00", "9:00 - 9:45", "10:00 - 10:45", "10:45 - 11:30", "12:00 - 12:45", "12:45 - 13:30", "14:00 - 14:45", "14:45 - 15:30", "15:45 - 16:30", "16:30 - 17:15", "17:25 - 18:10", "18:10 - 18:55"];
@@ -60,7 +65,15 @@ function updateTimetableList(timetableOn) {
             console.log(data);
             allTable.innerHTML = "";
             userInfo.innerHTML = "";
-            userInfo.innerHTML = data.timetable[0].groupname + " " + data.timetable[0].dayOfWeek;
+            let groupNameDiv = document.createElement("div");
+            groupNameDiv.setAttribute("class","groupName");
+            groupNameDiv.append(data.timetable[0].groupname);
+            userInfo.append(groupNameDiv);
+            userInfo.append(" ");
+            let dayOfWeek = document.createElement("div");
+            dayOfWeek.setAttribute("class","dayOfWeek");
+            dayOfWeek.append(data.timetable[0].dayOfWeek);
+            userInfo.append(dayOfWeek);
             for (let i = 0; i < data.timetable.length; i++) {
                 createTableLine(data, i);
             }
@@ -79,15 +92,15 @@ function createTableLine(data, numSubject) {
     dive.setAttribute("class", "tableLine");
 
     if (day === "6") {
-        dive.innerHTML = "<br><div class='numLesson'> номер урока " + data.timetable[numSubject].numLesson + "</div>"
-            + "<div class='subGroup'> подгруппа " + data.timetable[numSubject].subgroup + "</div>"
+        dive.innerHTML = "<br><div class='numLesson'>" + data.timetable[numSubject].numLesson + "</div>"
+            + "<div class='subGroup'>" + data.timetable[numSubject].subgroup + " подгруппа </div>"
             + "<div class='subject'>" + data.timetable[numSubject].subject + " </div>"
             + "<div class='teacher'>" + data.timetable[numSubject].teacher + "</div>"
             + "<div class='timeLesson'>" + timeLessonSt[data.timetable[numSubject].numLesson] + "</div>"
             + "<br>";
     } else {
-        dive.innerHTML = "<br><div class='numLesson'> номер урока " + data.timetable[numSubject].numLesson + "</div>"
-            + "<div class='subGroup'> подгруппа " + data.timetable[numSubject].subgroup + "</div>"
+        dive.innerHTML = "<br><div class='numLesson'>" + data.timetable[numSubject].numLesson + "</div>"
+            + "<div class='subGroup'>" + data.timetable[numSubject].subgroup + " подгруппа </div>"
             + "<div class='subject'>" + data.timetable[numSubject].subject + " </div>"
             + "<div class='teacher'>" + data.timetable[numSubject].teacher + "</div>"
             + "<div class='timeLesson'>" + timeLessonMnFr[data.timetable[numSubject].numLesson] + "</div>"
