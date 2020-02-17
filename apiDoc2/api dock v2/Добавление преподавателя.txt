@@ -1,0 +1,26 @@
+* -> обязательное поле
+URL:
+>http://timetable.kcpt-1.ru/api/v3/optionsTeacher
+
+Method:
+
+>POST
+
+Data:(данные к запросу)
+>"firstName" : string* -> имя преподавателя
+>"middleName" : string* -> отчество преподавателя
+>"lastName" : string* -> фамилия преподавателя
+>"fullName" : string -> фамилия и инициалы(оно генерируется само, но можно и указать)
+
+TypeData:
+>JSON
+
+---
+Выполнено успешно:
+>"ОК" (httpcode: 200, messagecode: "OK") -> тут надо уточнение, надо ли тебе ответ с кабинетом который ты добавил(по идее нужен, будет легче работать, передал ответ в функцию а она по данным сгенерировала)
+
+Ошибка валидации:
+>"Fails valide parametres" (httpcode: 422, messagecode: "Fails valide parametres")
+
+Ошибка выполнения:
+>(httpcode: 500,501,503, messagecode: "...") -> ошибки на сервере
