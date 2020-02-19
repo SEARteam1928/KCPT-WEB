@@ -25,7 +25,7 @@ const timeLessonSt = ["", "8:15\n9:00", "9:00\n9:45", "9:50\n10:35", "10:35\n11:
 
 function getOptionsList() {
     $.ajax({
-        url: "http://timetable.kcpt-1.ru/api/v3/allOptions",
+        url: "http://timetable.kcpt-1.ru/api/v3/viewAllOptions",
         type: "get",
         dataType: "json",
         data: {},
@@ -64,7 +64,7 @@ function appendInView(arr, createdElement, appendIn, selectDayOrGroups) {
 
 function updateTimetableList(timetableOn) {
     $.ajax({
-        url: "http://timetable.kcpt-1.ru/api/v3/timetable",
+        url: "http://timetable.kcpt-1.ru/api/v3/viewTimetable",
         type: "get",
         dataType: "json",
         data: {
