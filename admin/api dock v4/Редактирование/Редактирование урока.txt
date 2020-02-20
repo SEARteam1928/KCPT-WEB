@@ -1,12 +1,13 @@
 * -> обязательное поле
 URL:
->http://timetable.kcpt-1.ru/api/v3/addLessonInTimetable
+>http://timetable.kcpt-1.ru/api/v3/editLessonInTimetable
 
 Method:
 
 >POST
 
-Data:(данные к запросу)
+Data:(данные к запросу, id останется тот же)
+>"oldId" : integer* -> id старого урока который ты хочешь отредактировать
 >"day" : integer*  -> id добавляемого дня (опция) 
 >"group" : integer*  -> id добавляемой группы (опция) 
 >"numLesson" : integer* -> номер добавляемого урока
@@ -20,7 +21,7 @@ TypeData:
 
 ---
 Выполнено успешно:
->"ОК" (httpcode: 200, messagecode: "OK") -> тут надо уточнение, надо ли тебе ответ с уроком который ты добавил(по идее нужен, будет легче работать, передал ответ в функцию а она по данным сгенерировала)
+>"ОК" (httpcode: 200, messagecode: "OK")
 
 Ошибка валидации:
 >"Fails valide parametres" (httpcode: 422, messagecode: "Fails valide parametres")

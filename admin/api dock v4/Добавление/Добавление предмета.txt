@@ -14,7 +14,7 @@ TypeData:
 
 ---
 Выполнено успешно:
->"ОК" (httpcode: 200, messagecode: "OK") -> тут надо уточнение, надо ли тебе ответ с предметом который ты добавил(по идее нужен, будет легче работать, передал ответ в функцию а она по данным сгенерировала)
+>"ОК" (httpcode: 200, messagecode: "OK")
 
 Ошибка валидации:
 >"Fails valide parametres" (httpcode: 422, messagecode: "Fails valide parametres")

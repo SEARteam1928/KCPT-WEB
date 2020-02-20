@@ -1,0 +1,29 @@
+* -> обязательное поле
+URL:
+>http://timetable.kcpt-1.ru/api/v3/addLessonInTimetable
+
+Method:
+
+>POST
+
+Data:(данные к запросу)
+>"day" : integer*  -> id добавляемого дня (опция) 
+>"group" : integer*  -> id добавляемой группы (опция) 
+>"numLesson" : integer* -> номер добавляемого урока
+>"subgroup" : integer*  -> номер добавляемой группы (опция) 
+>"subject" : integer*  -> id добавляемого предмета (опция) 
+>"teacher" : integer*  -> id добавляемого преподавателя(опция) 
+>"room" : integer*  -> id добавляемого кабинета (опции) 
+
+TypeData:
+>JSON
+
+---
+Выполнено успешно:
+>"ОК" (httpcode: 200, messagecode: "OK")
+
+Ошибка валидации:
+>"Fails valide parametres" (httpcode: 422, messagecode: "Fails valide parametres")
+
+Ошибка выполнения:
+>(httpcode: 500,501,503, messagecode: "...") -> ошибки на сервере
