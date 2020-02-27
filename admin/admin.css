@@ -1,3 +1,107 @@
+.allSelect{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.allSelect div{
+    flex-wrap: wrap;
+
+
+}
+.groupselectdiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    /*
+    transform: rotate(-45deg);
+    */
+    border-right: #20bbf4 solid 1px;
+}
+.dayselectdiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
+.roomselectdiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
+.subjectselectdiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    margin: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
+.teacherselectdiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    margin: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
+.lessonNumDiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
+.subGroupNumDiv{
+    flex: 1;
+    background: none repeat scroll 0 0 #27b9f4;
+    border: 1px solid #27b9f4;
+    color: #FFFFFF;
+    margin: 10px;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #20bbf4 solid 1px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -7,8 +111,79 @@ body {
     font-family: 'Montserrat', sans-serif, Arial, Helvetica;
 }
 
+
+.groupSelect {
+    background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.daySelect {
+    background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.roomSelect{
+        background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.subjectSelect{
+        background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.teacherSelect{
+        background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.lessonNumInput{
+        background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.subGroupNumInput{
+        background: none repeat scroll 0 0 rgb(255, 251, 255);
+    border: 1px solid #27b9f4;
+    color: #0070ff;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 10px;
+}
 .teacher_ico_img{
-height: 50px;
+    height: 50px;
 }
 .room_ico_img{
     height: 40px;
@@ -20,10 +195,10 @@ height: 50px;
 }
 
 .header_space{
-    height: 150px;
+    height: 200px;
 }
 .footer_space{
-    height: 150px;
+    height: 500px;
 }
 
 
@@ -190,38 +365,7 @@ height: 50px;
         margin-bottom: 0.5%;
         display: flex;
     }
-    .groupSelect {
-        margin-top: 15px;
-        position: fixed;
-        width: calc(12% + 1vw);
-        background: none repeat scroll 0 0 #27b9f4;
-        border: 1px solid #27b9f4;
-        color: #FFFFFF;
-        box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
-        font-size: 14px;
-        padding: 10px;
-        alignment: right;
-        margin-right: 5px;
-        top: 11%;
-        right: 25.5%;
-        border-radius: 10px;
-    }
-    .daySelect {
-        margin-top: 15px;
-        position: fixed;
-        width: calc(12% + 1vw);
-        background: none repeat scroll 0 0 #27b9f4;
-        border: 1px solid #27b9f4;
-        color: #FFFFFF;
-        font-size: 14px;
-        alignment: right;
-        box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
-        border-radius: 10px;
-        margin-right: 5px;
-        top: 11%;
-        right: 11%;
-        padding: 10px;
-    }
+
 }
 @media screen and (max-width: 990px) {
     .tableLine {
@@ -338,33 +482,7 @@ height: 50px;
         height: 250px;
     }
 
-    .groupSelect {
-        position: fixed;
-        background: none repeat scroll 0 0 #27b9f4;
-        border: 1px solid #27b9f4;
-        color: #FFFFFF;
-        border-radius: 10px;
-        width: calc(42% + 1vw);
-        font-size: 40px;
-        padding: 3%;
-        alignment: bottom;
-        bottom: 6%;
-        left: 3%;
-    }
-    .daySelect {
-        position: fixed;
-        background: none repeat scroll 0 0 #27b9f4;
-        border: 1px solid #27b9f4;
-        color: #FFFFFF;
-        border-radius: 10px;
-        width: calc(42% + 1vw);
-        alignment: bottom;
-        margin-right: 5px;
-        bottom: 6%;
-        font-size: 40px;
-        padding: 3%;
-        right: 5%;
-    }
+
     .changes {
         margin-right: 5px;
         width: calc(30% + 1vw);

@@ -7,18 +7,6 @@ var day = date.getDay();
 if (day === 0) {
     day = 1;
 }
-/*window.addEventListener("resize", function () {
-    checkScreenSize.innerHTML = innerWidth + "x" + innerHeight;
-}, false);*/
-/*
-"  2| \nперемена 15 минут\n\n 3|  4| \nперемена 30 минут\n\n 5| 6|
-\n\nперемена 30 минут\n\n 7|  8| \nперемена 15 минут\n\n 9| 10|
-\n\nперемена 10 минут\n\n11| 17:25 - 18:10\n12| 18:10 - 18:55\n\n"
-
-"Cуббота\n\n\n 1|2| \n\nперемена 5 минут\n\n3|4| \n\nперемена 30 минут\n\n
-5| 6| \n\nперемена 10 минут\n\n 7|  8| \n\nперемена 10 минут\n\n
-9| 10| \nперемена 5 минут\n\n11| \n12|\n\n"
-*/
 
 const timeLessonMnFr = ["", "8:15\n9:00", "9:00\n9:45", "10:00\n10:45", "10:45\n11:30", "12:00\n12:45", "12:45\n13:30", "14:00\n14:45", "14:45\n15:30", "15:45\n16:30", "16:30\n17:15", "17:25\n18:10", "18:10\n18:55"];
 const timeLessonSt = ["", "8:15\n9:00", "9:00\n9:45", "9:50\n10:35", "10:35\n11:20", "11:50\n12:35", "12:35\n13:20", "13:30\n14:15", "14:15\n15:00", "15:10\n15:55", "15:55\n16:40", "16:45\n17:30", "17:30\n18:15"];
@@ -75,9 +63,9 @@ function updateTimetableList(timetableOn) {
             console.log(data);
 
             allTable.innerHTML = "";
-            /*
+
                         userInfo.innerHTML = "";
-            */
+
 
             let groupNameDiv = document.createElement("div");
             let dayOfWeek = document.createElement("div");
@@ -92,11 +80,11 @@ function updateTimetableList(timetableOn) {
                 groupNameDiv.append("Нет занятий!");
             }
 
-            /*
+
                         userInfo.append(groupNameDiv);
                         userInfo.append(" ");
                         userInfo.append(dayOfWeek);
-            */
+
 
             for (let i = 0; i < data.timetable.length; i++) {
                 createTableLine(data, i);
@@ -208,3 +196,15 @@ function selectDay(opt) {
 
 getOptionsList();
 updateTimetableList("Расписание на сегодня: ");
+/*window.addEventListener("resize", function () {
+    checkScreenSize.innerHTML = innerWidth + "x" + innerHeight;
+}, false);*/
+/*
+"  2| \nперемена 15 минут\n\n 3|  4| \nперемена 30 минут\n\n 5| 6|
+\n\nперемена 30 минут\n\n 7|  8| \nперемена 15 минут\n\n 9| 10|
+\n\nперемена 10 минут\n\n11| 17:25 - 18:10\n12| 18:10 - 18:55\n\n"
+
+"Cуббота\n\n\n 1|2| \n\nперемена 5 минут\n\n3|4| \n\nперемена 30 минут\n\n
+5| 6| \n\nперемена 10 минут\n\n 7|  8| \n\nперемена 10 минут\n\n
+9| 10| \nперемена 5 минут\n\n11| \n12|\n\n"
+*/
