@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="admin/admin.css">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <title>Админ</title>
+</head>
+<body>
+<div class="header_space"></div>
+
+
+
+
+
+<h3 id="clock">ПРЕЖДЕ ЧЕМ ЧТО-ТО ДОБАВЛЯТЬ ИЛИ УДАЛЯТЬ, ВЫБЕРИТЕ ЭТО В СПИСКЕ</h3>
+<div class="allSelect">
+    <div class="groupselectdiv">
+        <p>Группа</p>
+        <select class="groupSelect" id="groupSelect" onchange="selectGroup(this)" name="select">
+        </select>
+        <input class="addBt" value="+" onclick="create(0)" type="button">
+        <br>
+        <br>
+        <input class="delBt" value="Удалить" onclick="del(0)" type="button">
+    </div>
+    <div class="dayselectdiv">
+        <p>День недели</p>
+        <select class="daySelect" id="daySelect" onchange="selectDay(this)" name="select">
+        </select>
+    </div>
+    <div class="roomselectdiv">
+        <p>Номер кабинета</p>
+        <select class="roomSelect" id="roomSelect" onchange="selectRoom(this)" name="select">
+        </select>
+        <input class="addBt" value="+" onclick="create(2)" type="button">
+        <br>
+        <br>
+        <input class="delBt" value="Удалить" onclick="del(2)" type="button">
+    </div>
+    <div class="subjectselectdiv">
+        <p>Название предмета</p>
+        <select class="subjectSelect" id="subjectSelect" onchange="selectSubject(this)" name="select">
+        </select>
+        <input class="addBt" value="+" onclick="create(3)" type="button">
+        <br>
+        <br>
+        <input class="delBt" value="Удалить" onclick="del(3)" type="button">
+    </div>
+    <div class="teacherselectdiv">
+        <p>Преподаватель</p>
+        <select class="teacherSelect" id="teacherSelect" onchange="selectTeacher(this)" name="select">
+        </select>
+        <input class="addBt" value="+" onclick="create(4)" type="button">
+        <br>
+        <br>
+        <input class="delBt" value="Удалить" onclick="del(4)" type="button">
+    </div>
+    <div class="lessonNumDiv">
+        <p>Номер урока</p>
+        <input id="lessonNumInput" type="number" min="1" max="12" value="1">
+    </div>
+    <div class="subGroupNumDiv">
+        <p>Номер подгруппы</p>
+        <input id="subGroupNumInput" type="number" min="0" max="4" value="0">
+    </div>
+</div>
+<br><br>
+<input class="addLessonBt" value="+" onclick="create(5)" type="button">
+<br><br><br>
+
+<div class="block-header">
+    <img src="src/shape_left.png" alt="logo" class="header_img">
+</div>
+
+<div class="title">
+    <img src="src/tcp_logo.png" alt="logo" class="logoAdmin">
+</div>
+<a class="changes"
+   href="https://docs.google.com/document/d/e/2PACX-1vS2ehAErYyAWY-cm247Pt4oT2YVAkEMwiYXhFu0pxGexUne1PTWNiWS0ktvlglRQqNpLtolGzJjIlvc/pub">
+    Изменения
+</a>
+<!--
+<div class="userInfo" id="userInfo"></div>
+-->
+<div class="allTable" id="allTable">
+</div>
+<div class="footer_space"></div>
+<div class="footer">
+    <img src="src/shape-down.png" alt="logo" class="footer_img">
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+</script>
+<script src="admin/admin.js"></script>
+
+<div class="checkScreenSize" id="checkScreenSize">
+
+</div>
+</body>
+</html>

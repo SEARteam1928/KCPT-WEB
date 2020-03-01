@@ -1,0 +1,25 @@
+* -> обязательное поле
+URL:
+>http://timetable.kcpt-1.ru/api/v3/viewAllOptions
+
+Method:
+>GET
+
+Data:(данные к запросу отсутсвуют)
+
+TypeData:
+>JSON
+
+---
+Выполнено успешно:
+>{
+	"groups":{...}
+	"rooms":{...}
+	"teachers":{...}
+	"subject":{...}
+	"dayOfWeek":{...}
+
+} - > (httpcode: 200, messagecode: "OK")
+
+Ошибка выполнения:
+>(httpcode: 500,501,503, messagecode: "...") -> ошибки на сервере

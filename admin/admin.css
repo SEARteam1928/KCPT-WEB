@@ -1,3 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f0f0f0;
+    position: relative;
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica;
+}
+
+
 .allSelect{
     display: flex;
     flex-wrap: wrap;
@@ -8,22 +18,128 @@
 
 
 }
+
+.addBt{
+    background:linear-gradient(to bottom, #69f0ae 5%, #69f0ae 100%);
+    background-color:#69f0ae;
+    border: 1px solid #69f0ae;
+    color: #FFFFFF;
+    width: calc(80% + 1vw);
+    position: relative;
+    font-size: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(43, 189, 126, 0.3);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.addBt:hover {
+    background:linear-gradient(to bottom, #69f0ae 5%, #9fffe0 100%);
+    background-color:#69f0ae;
+}
+.addBt:active {
+    position:relative;
+    top:1px;
+}
+
+
+.addLessonBt{
+    background:linear-gradient(to bottom, #69f0ae 5%, #69f0ae 100%);
+    background-color:#69f0ae;
+    border: 1px solid #69f0ae;
+    color: #FFFFFF;
+    width: calc(80% + 1vw);
+    font-size: 28px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(43, 189, 126, 0.3);
+    padding: 5px;
+    border-radius: 10px;
+    border-right: #9fffe0 solid 1px;
+}
+
+.addLessonBt:hover {
+    background:linear-gradient(to bottom, #69f0ae 5%, #9fffe0 100%);
+    background-color:#69f0ae;
+}
+.addLessonBt:active {
+    position:relative;
+    top:1px;
+}
+
 .groupselectdiv{
     flex: 1;
     background: none repeat scroll 0 0 #27b9f4;
     border: 1px solid #27b9f4;
     color: #FFFFFF;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     flex-wrap: wrap;
     border-radius: 10px;
-    /*
-    transform: rotate(-45deg);
-    */
-    border-right: #20bbf4 solid 1px;
+/*
+transform: rotate(-45deg);
+*/
+border-right: #20bbf4 solid 1px;
 }
+
+
+.deleteLessonBt {
+    background:linear-gradient(to bottom, #f44336 5%, #f44336 100%);
+    background-color:#e87169;
+    border-radius:42px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:28px;
+    border: none;
+    font-weight:bold;
+    padding:10px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ba000d;
+}
+.deleteLessonBt:hover {
+    background:linear-gradient(to bottom, #ff5252 5%, #ff7961 100%);
+    background-color:#f44336;
+}
+.deleteLessonBt:active {
+    top:1px;
+}
+
+.delBt {
+    background:linear-gradient(to bottom, #ff5252 5%, #ff5252 100%);
+    background-color:#e87169;
+    border-radius:42px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    width: calc(80% + 1vw);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border: none;
+    font-weight:bold;
+    padding:10px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #c50e29;
+}
+.delBt:hover {
+    background:linear-gradient(to bottom, #ff5252 5%, #ff867f 100%);
+    background-color:#ff5252;
+}
+.delBt:active {
+    position:relative;
+    top:1px;
+}
+
+
+
 .dayselectdiv{
     flex: 1;
     background: none repeat scroll 0 0 #27b9f4;
@@ -31,7 +147,7 @@
     color: #FFFFFF;
     flex-wrap: wrap;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -44,7 +160,7 @@
     color: #FFFFFF;
     flex-wrap: wrap;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -57,7 +173,7 @@
     color: #FFFFFF;
     margin: 10px;
     flex-wrap: wrap;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -70,7 +186,7 @@
     color: #FFFFFF;
     margin: 10px;
     flex-wrap: wrap;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -83,7 +199,7 @@
     color: #FFFFFF;
     flex-wrap: wrap;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -96,19 +212,11 @@
     color: #FFFFFF;
     margin: 10px;
     flex-wrap: wrap;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.4);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
     border-right: #20bbf4 solid 1px;
-}
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: #f0f0f0;
-    position: relative;
-    font-family: 'Montserrat', sans-serif, Arial, Helvetica;
 }
 
 
@@ -117,7 +225,7 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.3);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -127,7 +235,7 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.3);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -137,7 +245,7 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.3);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -147,7 +255,7 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.3);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -157,7 +265,7 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
+    box-shadow: 0 0 10px rgba(0, 77, 124, 0.3);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;
@@ -177,7 +285,6 @@ body {
     border: 1px solid #27b9f4;
     color: #0070ff;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 77, 124, 0.8);
     font-size: 12px;
     padding: 5px;
     border-radius: 10px;

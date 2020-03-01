@@ -1,0 +1,23 @@
+* -> обязательное поле
+URL:
+>http://timetable.kcpt-1.ru/api/v3/addOptionsSubject
+
+Method:
+>POST
+
+Data:(данные к запросу)
+>"name" : string* -> название пердмета
+>"shortName" : string -> краткое название, по умолчанию пустое(оно пока не записывается не используй его)
+
+TypeData:
+>JSON
+
+---
+Выполнено успешно:
+>"ОК" (httpcode: 200, messagecode: "OK")
+
+Ошибка валидации:
+>"Fails valide parametres" (httpcode: 422, messagecode: "Fails valide parametres")
+
+Ошибка выполнения:
+>(httpcode: 500,501,503, messagecode: "...") -> ошибки на сервере

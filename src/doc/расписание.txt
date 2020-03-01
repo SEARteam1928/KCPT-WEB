@@ -1,0 +1,14 @@
+URL: http://timetable.kcpt-1.ru/api/v3/timetable
+
+Method: GET
+
+параметры для передачи в запрос:
+{
+	"group"	: 1, // id выбранной group, из параметра groups
+	"day"	: 1, // id дня недели day, из параметра week
+}
+
+формат данных:
+{
+	"timetable": array[...]//расписание для группы
+}	
